@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Entertainment</string>
+    <string name="home">Entertainment</string>
+    <string name="film">Movie</string>
+    <string name="setting">Setting</string>
+    <string name="fav_icon">Add to Favorite</string>
+    <string name="serial_tv">Serial TV</string>
+    <string name="fav_movie">Favourite Movie</string>
+    <string name="fav_tv">Favourite TV</string>
+    <string name="item_movie_name">item name movie</string>
+    <string name="item_tgl_movie">item tgl movie</string>
+    <string name="item_desc_movie">item Desc movie</string>
+    <string name="item_crew_movie">item crew movie</string>
+    <string name="item_position_movie">item position movie</string>
+    <string name="added_to_favorite">Added to Favorite</string>
+    <string name="removed_from_favorite">Removed from Favorite</string>
+    <string name="horizontal_picture">Picture</string>
+    <string name="search">Search</string>
+    <string name="daily_reminder">Set Daily Reminder</string>
+    <string name="reminder">Reminder</string>
+    <string name="search_movie">Search Movie</string>
+    <string name="release_today">Set Release Reminder</string>
+
+    <string name="item_name_serial">item name serial</string>
+    <string name="item_tgl_serial">item tgl serial</string>
+    <string name="item_desc_serial">item Desc serial</string>
+    <string name="item_crew_serial">item crew serial</string>
+    <string name="item_position_serial">item position serial</string>
+
+    <string name="backdrop_detail_movie">backdrop detail movie</string>
+    <string name="image_detail_movie">image detail movie</string>
+    <string name="title_detail_movie">title detail movie</string>
+    <string name="tgl_detail_movie">tgl detail movie</string>
+    <string name="genre_movie">Genre</string>
+    <string name="crew_detail_movie">crew detail movie</string>
+    <string name="position_detail_movie">position detail movie</string>
+    <string name="desc_tv_movie">Description</string>
+    <string name="desc_detail_movie">Description_detail_movie</string>
+
+    <string name="backdrop_detail_serial">backdrop detail serial</string>
+    <string name="image_detail_serial">image detail serial</string>
+    <string name="title_detail_serial">title detail serial</string>
+    <string name="tgl_detail_serial">tgl detail serial</string>
+    <string name="Featured_Crew_serial">Featured Crew</string>
+    <string name="crew_detail_serial">crew detail serial</string>
+    <string name="position_detail_serial">position detail serial</string>
+    <string name="desc_tv_serial">Description</string>
+    <string name="desc_detail_serial">Description_detail_serial</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

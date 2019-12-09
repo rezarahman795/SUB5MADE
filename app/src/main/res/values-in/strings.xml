@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Hiburan</string>
+    <string name="genre_movie">Jenis</string>
+    <string name="Featured_Crew_serial">Kru Fitur</string>
+    <string name="app_name">Hiburan</string>
+    <string name="film">Film</string>
+    <string name="setting">Setting</string>
+    <string name="fav_icon">Tambah Favourite</string>
+    <string name="fav_movie">Film Favorit</string>
+    <string name="fav_tv">Tv Favorit</string>
+    <string name="desc_tv_movie">Deskripsi</string>
+    <string name="desc_tv_serial">Deskripsi</string>
+    <string name="added_to_favorite">Favorit di tambahkan</string>
+    <string name="removed_from_favorite">favorit di hapus</string>
+    <string name="desc_detail_movie">Deskripsi Film</string>
+    <string name="desc_detail_serial">Deskripsi Serial TV</string>
+    <string name="backdrop_detail_movie">Gambar belakang film</string>
+    <string name="backdrop_detail_serial">Gambar belakang serial</string>
+    <string name="crew_detail_movie">Detil Kru Film</string>
+    <string name="crew_detail_serial">Detil Kru Serial</string>
+    <string name="image_detail_movie">Gambar detail film</string>
+    <string name="image_detail_serial">Gambar detail serial</string>
+    <string name="item_crew_movie">daftar kru film</string>
+    <string name="item_crew_serial">daftar kru serial</string>
+    <string name="search_movie">Cari Film</string>
+    <string name="item_desc_movie">daftar deskripsi film</string>
+    <string name="item_desc_serial">daftar deskripsi serial</string>
+    <string name="item_movie_name">daftar nama film</string>
+    <string name="item_name_serial">daftar nama serial</string>
+    <string name="item_position_movie">daftar posisi kru</string>
+    <string name="item_position_serial">daftar posisi kru</string>
+    <string name="item_tgl_movie">daftar tgl film</string>
+    <string name="item_tgl_serial">daftar tgl serial</string>
+    <string name="position_detail_movie">posisi detail film</string>
+    <string name="position_detail_serial">posisi detail serial</string>
+    <string name="serial_tv">Serial TV</string>
+    <string name="search">cari</string>
+    <string name="daily_reminder">Pengingat Harian</string>
+    <string name="release_today">Tayang Hari Ini</string>
+    <string name="reminder">Pengingat</string>
+    <string name="horizontal_picture">Gambar</string>
+    <string name="tgl_detail_movie">tgl detail film</string>
+    <string name="tgl_detail_serial">tgl detail serial</string>
+    <string name="title_detail_movie">judul detail film</string>
+    <string name="title_detail_serial">judul detail serial</string>
+
+</resources>

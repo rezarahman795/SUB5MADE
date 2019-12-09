@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@+id/movieFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.sub_5_made_project_akhir.view.fragment.MovieFragment"
+        tools:layout="@layout/fragment_movie">
+
+        <action
+            android:id="@+id/action_movieFragment_to_DetailMovie"
+            app:destination="@id/detail_movie_activity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <activity
+        android:id="@+id/detail_movie_activity"
+        android:name="com.example.mainactivity.detail.MovieDetailActivity"
+        tools:layout="@layout/activity_movie_detail" />
+
+</navigation>
