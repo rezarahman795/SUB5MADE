@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 public final class DbContract {
-
+    public static String TABLE_NAME = "entertainment";
     public static final String AUTHORITY = "com.example.sub_5_made_project_akhir";
     private static final String SCHEME = "content";
 
@@ -14,7 +14,7 @@ public final class DbContract {
 
 
     public static final class KatalogColumn implements BaseColumns {
-        public static String TABLE_NAME = "entertainment";
+
         public final static String MOVIE_ID = "id";
         public final static String TV_ID = "id";
 
@@ -36,6 +36,7 @@ public final class DbContract {
     public static String getColumnString(Cursor cursor, String columnName) {
         return cursor.getString(cursor.getColumnIndex(columnName));
     }
+
     public static int getColumnDouble(Cursor cursor, String columnName) {
         return cursor.getInt(cursor.getColumnIndex(columnName));
     }

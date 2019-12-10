@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import static android.provider.BaseColumns._ID;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.MOVIE_ID;
-import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TABLE_NAME;
+import static com.example.sub_5_made_project_akhir.DB.DbContract.TABLE_NAME;
 
 public class DbHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "db_entertainment";
@@ -69,7 +69,6 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     public void close() {
-        dbHelper.close();
         if (sqLiteDatabase_.isOpen())
             sqLiteDatabase_.close();
     }

@@ -31,7 +31,7 @@ import static com.example.sub_5_made_project_akhir.DB.DbContract.getColumnString
 @Data
 @SuppressWarnings("unused")
 public class Movie implements Parcelable {
-    private String descMovieDetail, detailNameMovie, tglMovieDetail, backdropPict, imageOrigin, genre,type,movieID_DETAIL;
+    private String descMovieDetail, detailNameMovie, tglMovieDetail, backdropPict, imageOrigin, genre, type, movieID_DETAIL;
     double star;
 
     public Movie(JSONObject objMovie) {
@@ -84,6 +84,7 @@ public class Movie implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.movieID_DETAIL);
+        dest.writeString(this.type);
         dest.writeString(this.detailNameMovie);
         dest.writeString(this.tglMovieDetail);
         dest.writeString(this.descMovieDetail);
@@ -96,6 +97,7 @@ public class Movie implements Parcelable {
 
     protected Movie(Parcel in) {
         this.movieID_DETAIL = in.readString();
+        this.type = in.readString();
         this.detailNameMovie = in.readString();
         this.tglMovieDetail = in.readString();
         this.descMovieDetail = in.readString();

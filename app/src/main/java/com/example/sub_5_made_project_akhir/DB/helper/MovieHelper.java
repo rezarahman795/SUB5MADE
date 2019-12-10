@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
 import com.example.sub_5_made_project_akhir.DB.DbHelper;
 import com.example.sub_5_made_project_akhir.model.Movie;
 
@@ -17,17 +18,18 @@ import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.D
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.IMAGE;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.OVERVIEW;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.RATE;
-import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TABLE_NAME;
+
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TITLE;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TYPE;
+import static com.example.sub_5_made_project_akhir.DB.DbContract.TABLE_NAME;
 
 public class MovieHelper {
 
     private static final String DB_TABLE = TABLE_NAME;
-    private static DbHelper databaseHelper ;
+    private static DbHelper databaseHelper;
     private static SQLiteDatabase sqLiteDatabase;
-    
-    private MovieHelper(Context context){
+
+    public MovieHelper(Context context) {
 
         databaseHelper = new DbHelper(context);
     }
@@ -66,6 +68,7 @@ public class MovieHelper {
 
 
     public long insertMovie(Movie movie) {
+        sqLiteDatabase = databaseHelper.getReadableDatabase();
         ContentValues args = new ContentValues();
         args.put(_ID, movie.getMovieID_DETAIL());
         args.put(MOVIE_ID, movie.getMovieID_DETAIL());
@@ -81,6 +84,7 @@ public class MovieHelper {
 
 
     public int deleteMovie(String id) {
+        sqLiteDatabase = databaseHelper.getReadableDatabase();
         return sqLiteDatabase.delete(DB_TABLE, _ID + " = '" + id + "'", null);
     }
 

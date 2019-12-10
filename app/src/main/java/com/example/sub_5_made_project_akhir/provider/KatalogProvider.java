@@ -4,8 +4,6 @@ import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 
 import androidx.annotation.NonNull;
@@ -14,7 +12,7 @@ import com.example.sub_5_made_project_akhir.DB.DbHelper;
 import java.util.Objects;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.AUTHORITY;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.CONTENT_URI_ENTERTAINMENT;
-import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TABLE_NAME;
+import static com.example.sub_5_made_project_akhir.DB.DbContract.TABLE_NAME;
 
 public class KatalogProvider extends ContentProvider {
     private static final int ENTERTAINMENT = 100;

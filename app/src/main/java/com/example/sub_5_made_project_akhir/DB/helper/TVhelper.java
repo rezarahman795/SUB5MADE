@@ -16,10 +16,10 @@ import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.D
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.IMAGE;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.OVERVIEW;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.RATE;
-import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TABLE_NAME;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TITLE;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TV_ID;
 import static com.example.sub_5_made_project_akhir.DB.DbContract.KatalogColumn.TYPE;
+import static com.example.sub_5_made_project_akhir.DB.DbContract.TABLE_NAME;
 
 public class TVhelper {
     private static final String DB_TABLE = TABLE_NAME;

@@ -76,6 +76,7 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     private void setDataMovie() {
         Intent moveIntent = getIntent();
+        movieHelper = new MovieHelper(this);
         dataMovie = moveIntent.getParcelableExtra(GET_DATA_MOVIE);
         if (dataMovie != null) {
             Glide.with(this)
@@ -119,42 +120,30 @@ public class MovieDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Movie favMovie = new Movie();
 
-        favMovie.setMovieID_DETAIL(dataMovie.getMovieID_DETAIL());
-        favMovie.setDescMovieDetail(dataMovie.getDescMovieDetail());
-        favMovie.setTglMovieDetail(dataMovie.getTglMovieDetail());
-        favMovie.setImageOrigin(dataMovie.getImageOrigin());
-        favMovie.setStar((float)dataMovie.getStar()/2);
-        favMovie.setBackdropPict(dataMovie.getBackdropPict());
-
-        dbHelperDetailMovie = DbHelper.getInstance(getApplicationContext());
         if (item.getItemId() == R.id.favorite_icon) {
-            if (item.isChecked()) {
-                item.setChecked(false);
+            if (!item.isChecked()) {
                 dataMovie.setType("entertainment");
                 dbHelperDetailMovie.open();
-                long checkResult = movieHelper.deleteMovie(dataMovie.getMovieID_DETAIL());
-                System.out.println("result insert : "+checkResult);
-                dbHelperDetailMovie.close();
-                if (checkResult > 0) {
-                    item.setIcon(R.drawable.ic_add_to_favorites);
-                    Toast.makeText(getApplicationContext(), "Success " + dataMovie.getDetailNameMovie() + " Add from Favorite", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Failed " + dataMovie.getDetailNameMovie() + " Add to Favorite", Toast.LENGTH_LONG).show();
-                }
-            } else {
-                item.setChecked(true);
-                dataMovie.setType("entertainment");
-                dbHelperDetailMovie.open();
-                long checkResult = movieHelper.insertMovie(favMovie);
-                System.out.println(checkResult);
+                long checkResult = movieHelper.insertMovie(dataMovie);
                 dbHelperDetailMovie.close();
                 if (checkResult > 0) {
                     item.setIcon(R.drawable.ic_added_to_favorites);
                     Toast.makeText(getApplicationContext(), "Success " + dataMovie.getDetailNameMovie() + " Delete from Favorite", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Failed " + dataMovie.getDetailNameMovie() + " Delete to Favorite", Toast.LENGTH_LONG).show();
+                }
+
+            } else {
+                dataMovie.setType("entertainment");
+                dbHelperDetailMovie.open();
+                long checkResult = movieHelper.deleteMovie(dataMovie.getMovieID_DETAIL());
+                dbHelperDetailMovie.close();
+                if (checkResult > 0) {
+                    item.setIcon(R.drawable.ic_add_to_favorites);
+                    Toast.makeText(getApplicationContext(), "Success " + dataMovie.getDetailNameMovie() + " Add from Favorite", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Failed " + dataMovie.getDetailNameMovie() + " Add to Favorite", Toast.LENGTH_LONG).show();
                 }
             }
         }
