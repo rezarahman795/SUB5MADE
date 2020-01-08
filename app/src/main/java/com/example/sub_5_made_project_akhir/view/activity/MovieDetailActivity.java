@@ -38,18 +38,15 @@ import java.util.Objects;
 import cz.msebera.android.httpclient.Header;
 
 public class MovieDetailActivity extends AppCompatActivity {
-    public static final String GET_DATA_MOVIE = BuildConfig.GET_DATA_MOVIE;
+    public static final String GET_DATA_MOVIE = BuildConfig.GET_DATA;
     private Movie dataMovie;
     private DbHelper dbHelperDetailMovie;
     private MovieHelper movieHelper;
-    private Boolean flagFavourite;
     private TextView tvNameMovie, tvTglMovie, tvDescMovie, tvGenreMovie;
     private RatingBar rateDetailMovie;
     private ProgressBar pbMovie;
     private ScrollView sViewDetail;
     private ImageView posterMovie, backDropMovie;
-    private String movieNameDetail, movieTglDetail, movieDescDetail, imgDetail, imgBackDrop;
-    private float rateDetailMovie1;
 
 
     @Override

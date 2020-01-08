@@ -15,7 +15,7 @@ android {
         buildConfigField "String", "GENRE_URL", "\"https://api.themoviedb.org/3/movie/\""
         buildConfigField "String", "BACKDROP_URL", "\"http://image.tmdb.org/t/p/original/\""
         buildConfigField "String", "POSTER_URL", "\"http://image.tmdb.org/t/p/original/\""
-        buildConfigField "String", "GET_DATA_MOVIE", "\"GET_DATA_MOVIE\""
+        buildConfigField "String", "GET_DATA", "\"GET_DATA\""
     }
     buildTypes {
         release {

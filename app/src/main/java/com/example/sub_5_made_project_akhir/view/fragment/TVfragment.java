@@ -3,6 +3,7 @@ package com.example.sub_5_made_project_akhir.view.fragment;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,7 @@ import com.example.sub_5_made_project_akhir.adapter.TVAdapter;
 import com.example.sub_5_made_project_akhir.adapter.TVHorizontalAdapter;
 import com.example.sub_5_made_project_akhir.model.Movie;
 import com.example.sub_5_made_project_akhir.model.TV;
+import com.example.sub_5_made_project_akhir.view.activity.SerialTVDetailActivity;
 import com.example.sub_5_made_project_akhir.viewmodel.MovieViewModel;
 import com.example.sub_5_made_project_akhir.viewmodel.TvViewModel;
 
@@ -92,6 +94,15 @@ public class TVfragment extends Fragment {
         rv_verticalTV.setAdapter(tvAdapter);
         rv_horizontalTV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         rv_horizontalTV.setAdapter(tvHorizontalAdapter);
+
+        tvAdapter.setOnItemClickCallback(new TVAdapter.OnItemClickCallback() {
+            @Override
+            public void onItemClicked(TV dataTV) {
+
+                showSelectedTv(dataTV);
+
+            }
+        });
     }
 
     @Override
@@ -189,5 +200,12 @@ public class TVfragment extends Fragment {
         } else {
             pb_TV.setVisibility(View.GONE);
         }
+    }
+
+    private void showSelectedTv(TV detailTV) {
+        Intent tvDetail = new Intent(getContext(), SerialTVDetailActivity.class);
+        tvDetail.putExtra("GET_DATA_TV", detailTV);
+        startActivity(tvDetail);
+        getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

@@ -19,36 +19,29 @@ import com.example.sub_5_made_project_akhir.model.TV;
 
 import java.util.ArrayList;
 
-public class TVAdapter extends RecyclerView.Adapter<TVAdapter.ViewHolderTV> {
-    private ArrayList<TV> listSerialTV;
+public class FavTVAdapter extends RecyclerView.Adapter<FavTVAdapter.ViewTVHolder> {
+    private ArrayList<TV>listTv;
     private Context context;
-    private OnItemClickCallback onItemClickCallback;
 
-    public TVAdapter(Context context) {
+    public FavTVAdapter (Context context){
         this.context = context;
-        listSerialTV= new ArrayList<>();
+        listTv = new ArrayList<>();
     }
-
-    public void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback;
+    public void setListFavTV(ArrayList<TV>listFavTV){
+        this.listTv.clear();
+        this.listTv.addAll(listFavTV);
+        notifyDataSetChanged();
     }
-
-    public void setListSerialTV(ArrayList<TV> listTV) {
-
-        this.listSerialTV = listTV;
-    }
-
-
     @NonNull
     @Override
-    public TVAdapter.ViewHolderTV onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_serial_tv, parent, false);
-        return new ViewHolderTV(view);
+    public FavTVAdapter.ViewTVHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View viewTv = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_serial_tv,parent,false);
+        return new ViewTVHolder(viewTv);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolderTV holder, int position) {
-        TV mySerialTV = listSerialTV.get(position);
+    public void onBindViewHolder(@NonNull FavTVAdapter.ViewTVHolder holder, int position) {
+        TV mySerialTV = listTv.get(position);
 
         holder.txtNameSerial.setText(mySerialTV.getSerialNameTV());
         holder.txtTglSerial.setText(mySerialTV.getTglSerial());
@@ -60,26 +53,18 @@ public class TVAdapter extends RecyclerView.Adapter<TVAdapter.ViewHolderTV> {
                 .placeholder((R.mipmap.ic_launcher))
                 .apply(new RequestOptions().override(350, 550))
                 .into(holder.pictSerial);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onItemClickCallback.onItemClicked(listSerialTV.get(holder.getAdapterPosition()));
-            }
-        });
     }
 
     @Override
     public int getItemCount() {
-        return listSerialTV.size();
+       return listTv.size();
     }
 
-    public class ViewHolderTV extends RecyclerView.ViewHolder {
+    public class ViewTVHolder extends RecyclerView.ViewHolder {
         TextView txtNameSerial, txtTglSerial, txtDescSerial;
         RatingBar rateTV;
         ImageView pictSerial;
-
-        public ViewHolderTV(@NonNull View itemView) {
+        public ViewTVHolder(@NonNull View itemView) {
             super(itemView);
 
             pictSerial = itemView.findViewById(R.id.item_poster_serial);
@@ -88,10 +73,5 @@ public class TVAdapter extends RecyclerView.Adapter<TVAdapter.ViewHolderTV> {
             txtDescSerial = itemView.findViewById(R.id.txt_desc_serial);
             rateTV = itemView.findViewById(R.id.TV_RATE);
         }
-    }
-
-    public interface OnItemClickCallback {
-
-        void onItemClicked(TV dataTV);
     }
 }

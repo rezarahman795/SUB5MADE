@@ -26,7 +26,7 @@ public class TVhelper {
     private static DbHelper databaseHelper ;
     private static SQLiteDatabase sqLiteDatabase;
 
-    private TVhelper(Context context){
+    public TVhelper(Context context){
 
         databaseHelper = new DbHelper(context);
     }
@@ -63,11 +63,13 @@ public class TVhelper {
         return arrayList;
     }
 
-    public int deleteTV(int id) {
+    public int deleteTV(String id) {
+        sqLiteDatabase = databaseHelper.getReadableDatabase();
         return sqLiteDatabase.delete(DB_TABLE, _ID + " = '" + id + "'", null);
     }
 
     public long insertTV(TV tv) {
+        sqLiteDatabase = databaseHelper.getReadableDatabase();
         ContentValues args = new ContentValues();
         args.put(_ID, tv.getID_TV());
         args.put(TV_ID, tv.getID_TV());

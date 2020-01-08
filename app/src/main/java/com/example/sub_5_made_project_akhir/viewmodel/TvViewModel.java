@@ -145,6 +145,7 @@ public class TvViewModel extends AndroidViewModel {
 
     public TvViewModel(@NonNull Application application) {
         super(application);
+        this.tVhelper = new TVhelper(application);
         this.dbHelperTv = DbHelper.getInstance(application);
     }
 
