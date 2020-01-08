@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.sub_5_made_project_akhir.DB.DbHelper;
 import com.example.sub_5_made_project_akhir.model.Movie;
@@ -33,7 +34,6 @@ public class MovieHelper {
 
         databaseHelper = new DbHelper(context);
     }
-
     public ArrayList<Movie> getListFavoriteMovie(String type) {
         ArrayList<Movie> arrayList = new ArrayList<>();
         sqLiteDatabase = databaseHelper.getReadableDatabase();

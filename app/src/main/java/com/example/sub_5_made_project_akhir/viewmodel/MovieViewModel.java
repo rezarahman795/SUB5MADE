@@ -27,7 +27,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MovieViewModel extends AndroidViewModel {
-    private DbHelper dbHelper;
+    private final DbHelper dbHelper;
     private MovieHelper movieHelper;
     private RequestRetrofit api_helper;
     private MutableLiveData<ArrayList<Movie>> listMoviesViewModel = new MutableLiveData<>();
@@ -147,6 +147,8 @@ public class MovieViewModel extends AndroidViewModel {
     public MovieViewModel(@NonNull Application application) {
         super(application);
         this.dbHelper = DbHelper.getInstance(application);
+        this.movieHelper = new MovieHelper(application);
+
     }
 
     public void setDBFavMovies(String type) {

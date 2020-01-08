@@ -129,9 +129,9 @@ public class MovieDetailActivity extends AppCompatActivity {
                 dbHelperDetailMovie.close();
                 if (checkResult > 0) {
                     item.setIcon(R.drawable.ic_added_to_favorites);
-                    Toast.makeText(getApplicationContext(), "Success " + dataMovie.getDetailNameMovie() + " Delete from Favorite", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Success " + dataMovie.getDetailNameMovie() + " Add to Favorite", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Failed " + dataMovie.getDetailNameMovie() + " Delete to Favorite", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Failed " + dataMovie.getDetailNameMovie() + " Add to Favorite", Toast.LENGTH_LONG).show();
                 }
 
             } else {
@@ -141,9 +141,9 @@ public class MovieDetailActivity extends AppCompatActivity {
                 dbHelperDetailMovie.close();
                 if (checkResult > 0) {
                     item.setIcon(R.drawable.ic_add_to_favorites);
-                    Toast.makeText(getApplicationContext(), "Success " + dataMovie.getDetailNameMovie() + " Add from Favorite", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Success " + dataMovie.getDetailNameMovie() + " Delete from Favorite", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Failed " + dataMovie.getDetailNameMovie() + " Add to Favorite", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Failed " + dataMovie.getDetailNameMovie() + " Delete from Favorite", Toast.LENGTH_LONG).show();
                 }
             }
         }
